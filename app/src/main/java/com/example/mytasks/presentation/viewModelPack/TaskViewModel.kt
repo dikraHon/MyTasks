@@ -1,4 +1,4 @@
-package com.example.mytasks.presintation.viewModelPack
+package com.example.mytasks.presentation.viewModelPack
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -12,11 +12,11 @@ import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class TaskViewModel(
+class TaskViewModel @Inject constructor(
     private val repositoryTask: RepositoryTask,
-    application: Application
-) : AndroidViewModel(application) {
+) : ViewModel() {
 
     val tasks: StateFlow<List<ItemTasks>> = flow {
         emitAll(repositoryTask.getAllTasks())

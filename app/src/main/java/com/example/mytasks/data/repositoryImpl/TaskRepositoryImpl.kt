@@ -4,8 +4,9 @@ import com.example.mytasks.data.database.TaskDatabase
 import com.example.mytasks.domain.modelData.ItemTasks
 import com.example.mytasks.domain.repository.RepositoryTask
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class TaskRepositoryImpl(getDao: TaskDatabase): RepositoryTask {
+class TaskRepositoryImpl @Inject constructor(getDao: TaskDatabase): RepositoryTask {
     private val taskDao = getDao.taskDao()
 
     override suspend fun getAllTasks(): Flow<List<ItemTasks>> = taskDao.getAllTasks()

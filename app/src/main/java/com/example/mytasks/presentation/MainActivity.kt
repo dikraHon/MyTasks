@@ -1,4 +1,4 @@
-package com.example.mytasks.presintation
+package com.example.mytasks.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,24 +11,21 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.mytasks.data.database.TaskDatabase
 import com.example.mytasks.data.repositoryImpl.TaskRepositoryImpl
-import com.example.mytasks.presintation.mainScreen.MainScreen
-import com.example.mytasks.presintation.viewModelPack.TaskViewModel
-import com.example.mytasks.presintation.viewModelPack.ViewModelFactory
+import com.example.mytasks.di.AppMyTasks
+import com.example.mytasks.presentation.mainScreen.MainScreen
+import com.example.mytasks.presentation.viewModelPack.TaskViewModel
+import com.example.mytasks.presentation.viewModelPack.ViewModelFactory
 import com.example.mytasks.ui.theme.MyTasksTheme
+import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
 
-    private val taskDatabase by lazy { TaskDatabase.getDatabase(application) }
-    private val repositoryTask by lazy { TaskRepositoryImpl(taskDatabase) }
-    private val viewModelFactory by lazy {
-        ViewModelFactory(
-            application = application,
-            repositoryTask = repositoryTask
-        )
-    }
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
     private val taskViewModel: TaskViewModel by viewModels { viewModelFactory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as AppMyTasks).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {

@@ -1,4 +1,4 @@
-package com.example.mytasks.presintation.mainScreen
+package com.example.mytasks.presentation.mainScreen
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button

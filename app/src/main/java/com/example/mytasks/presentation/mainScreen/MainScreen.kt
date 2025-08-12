@@ -1,4 +1,4 @@
-package com.example.mytasks.presintation.mainScreen
+package com.example.mytasks.presentation.mainScreen
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,7 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.mytasks.domain.modelData.ItemTasks
-import com.example.mytasks.presintation.viewModelPack.TaskViewModel
+import com.example.mytasks.presentation.viewModelPack.TaskViewModel
 
 @Composable
 fun MainScreen(

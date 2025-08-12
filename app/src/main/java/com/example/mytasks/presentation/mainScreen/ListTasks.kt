@@ -1,4 +1,4 @@
-package com.example.mytasks.presintation.mainScreen
+package com.example.mytasks.presentation.mainScreen
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import com.example.mytasks.presintation.viewModelPack.TaskViewModel
+import com.example.mytasks.presentation.viewModelPack.TaskViewModel
 
 @Composable
 fun ListTasks(

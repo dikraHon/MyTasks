@@ -1,4 +1,4 @@
-package com.example.mytasks.presintation.mainScreen
+package com.example.mytasks.presentation.mainScreen
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
